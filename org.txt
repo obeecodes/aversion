@@ -1,0 +1,21 @@
+MySDL2Game/
+├── src/
+│   └── main.cpp
+├── include/
+├── libs/
+│   ├── include/
+│   │   ├── SDL2/
+│   │   │   ├── SDL.h
+│   │   │   ├── SDL_image.h
+│   │   │   ├── SDL_mixer.h
+│   │   │   ├── SDL_ttf.h
+│   │   │   └── (other SDL2 header files)
+│   ├── win/
+│   │   ├── SDL2.dll
+│   │   └── SDL2.lib
+│   ├── mac/
+│   │   └── libSDL2.dylib
+│   └── linux/
+│       └── libSDL2.so
+├── CMakeLists.txt
+└── README.md

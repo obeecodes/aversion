@@ -1,0 +1,34 @@
+
+./src/systems/cameraSystem.cpp:  transforms(PhysicsSystem::Instance()->getTransforms()){
+./src/systems/cameraSystem.cpp:    if(this->cameras[i].position.getX() > SpriteSystem::Instance()->getMapWidth() * 32 - viewport.w){
+./src/systems/cameraSystem.cpp:      this->cameras[i].position.setX(SpriteSystem::Instance()->getMapWidth() * 32 - viewport.w);
+./src/systems/cameraSystem.cpp:    if(this->cameras[i].position.getY() > SpriteSystem::Instance()->getMapHeight() * 32 - viewport.h){
+./src/systems/cameraSystem.cpp:      this->cameras[i].position.setY(SpriteSystem::Instance()->getMapHeight() * 32 - viewport.h);
+./src/systems/cameraSystem.cpp:  this->activeTransformComponent = PhysicsSystem::Instance()->getTransformComponentSystem()->getEntityComponent(entityID);
+./src/systems/inputSystem.cpp:  physics (PhysicsSystem::Instance()->getPhysics()), 
+./src/systems/inputSystem.cpp:  sprites(SpriteSystem::Instance()->getSprites()){
+
+./src/systems/inputSystem.cpp:            CameraSystem::Instance()->zoomOut();
+./src/systems/inputSystem.cpp:            CameraSystem::Instance()->zoomIn();
+./src/systems/inputSystem.cpp:            AudioSystem::Instance()->playSample(0);
+
+./src/systems/physicsSystem.cpp:  dx += (InputSystem::Instance()->getInputs()[0].moveLeft ? - 1 : 0);
+./src/systems/physicsSystem.cpp:  dx += (InputSystem::Instance()->getInputs()[0].moveRight ? 1 : 0);
+./src/systems/physicsSystem.cpp:  dy += (InputSystem::Instance()->getInputs()[0].moveUp ? - 1 : 0);
+./src/systems/physicsSystem.cpp:  dy += (InputSystem::Instance()->getInputs()[0].moveDown ? 1 : 0);
+./src/systems/physicsSystem.cpp:  tile1 = SpriteSystem::Instance()->getTile(position1);
+./src/systems/physicsSystem.cpp:  tile2 = SpriteSystem::Instance()->getTile(position2);
+./src/systems/physicsSystem.cpp:  tile3 = SpriteSystem::Instance()->getTile(position3);
+./src/systems/physicsSystem.cpp:  tile4 = SpriteSystem::Instance()->getTile(position4);
+./src/systems/physicsSystem.cpp:    if (dx < 0 && !PhysicsSystem::Instance()->isCollision(xCollider, tile1) && !PhysicsSystem::Instance()->isCollision(xCollider, tile3) ){
+./src/systems/physicsSystem.cpp:    if (dx > 0 && !PhysicsSystem::Instance()->isCollision(xCollider, tile2) && !PhysicsSystem::Instance()->isCollision(xCollider, tile4)){
+./src/systems/physicsSystem.cpp:    if (dy < 0 && !PhysicsSystem::Instance()->isCollision(yCollider, tile1) && !PhysicsSystem::Instance()->isCollision(yCollider, tile2)){
+./src/systems/physicsSystem.cpp:    if (dy > 0 && !PhysicsSystem::Instance()->isCollision(yCollider, tile3) && !PhysicsSystem::Instance()->isCollision(yCollider, tile4)){
+
+./src/systems/spriteSystem.cpp:  transforms(PhysicsSystem::Instance()->getTransforms()){
+./src/systems/spriteSystem.cpp:    this->camera = CameraSystem::Instance()->getCamera();
+./src/systems/spriteSystem.cpp:  this->camera = CameraSystem::Instance()->getCamera();
+./src/systems/spriteSystem.cpp:    int a = PhysicsSystem::Instance()->getPhysics()[0].collider.x - this->camera.position.x;
+./src/systems/spriteSystem.cpp:    int b = PhysicsSystem::Instance()->getPhysics()[0].collider.y - this->camera.position.y;
+./src/systems/spriteSystem.cpp:    int c = PhysicsSystem::Instance()->getPhysics()[0].collider.w;
+./src/systems/spriteSystem.cpp:    int d = PhysicsSystem::Instance()->getPhysics()[0].collider.h;

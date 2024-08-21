@@ -1,0 +1,17 @@
+# Ignore build artifacts
+/build
+
+# Ignore generated files
+/CMakeFiles
+/CMakeScripts
+/CMakeCache.txt
+/CMakeDirectoryInformation.cmake
+
+# Ignore dependencies, assuming you use CMake's ExternalProject feature
+/lib
+
+# Ignore any other generated or temporary files
+*.o
+*.a
+*.so
+*.dll

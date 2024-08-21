@@ -1,0 +1,8 @@
+You may experience a segfault or failed assertion in specific cases:
+
+When performing a MOVE_INTENT, if the entity does not have a collider component, 
+then obviously getEntityIndex will fail because it is trying to retrieve the index 
+of the component that the entity DOES NOT HAVE!!! 
+
+HANDLE THE ABOVE CASE GRACEFULLY
+

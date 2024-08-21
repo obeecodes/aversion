@@ -1,0 +1,56 @@
+CMake_Minimum_Required(VERSION 3.24.4)
+
+# Set project name
+Project(Aversion)
+
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Add debugging flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+
+# Include SDL2
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(SDL2 REQUIRED sdl2)
+pkg_check_modules(SDL2_MIXER REQUIRED SDL2_mixer)
+pkg_check_modules(SDL2_IMAGE REQUIRED SDL2_image)
+pkg_check_modules(SDL2_TTF REQUIRED SDL2_ttf)
+
+# Add the include directories of the (found) libraries
+include_directories(
+  ${SDL2_INCLUDE_DIRS}
+  ${SDL2_MIXER_INCLUDE_DIRS}
+  ${SDL2_IMAGE_INCLUDE_DIRS}
+  ${SDL2_TTF_INCLUDE_DIRS}
+)
+
+# Add Lua subdirectory
+add_subdirectory(external/lua)
+
+file(GLOB SOURCES src/*.cpp src/*/*.cpp src/*/*/*.cpp include/*.h include/*/*.h include/*/*/*.h)
+
+# Set the output directory for the executable
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
+
+# Add executable
+add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
+
+# Link directories
+link_directories(${CMAKE_BINARY_DIR}/res)
+
+# Find and link libraries
+find_package(SDL2 REQUIRED)
+find_package(SDL2_mixer REQUIRED)
+find_package(SDL2_image REQUIRED)
+find_package(SDL2_ttf REQUIRED)
+
+# Link libraries to the project
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC ${SDL2_LIBRARIES})
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC ${SDL2_IMAGE_LIBRARIES})
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC ${SDL2_TTF_LIBRARIES})
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC lua)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE SDL2_mixer::SDL2_mixer)
+
+# Add the linker flag -Wl,-ld_classic
+target_link_options(${CMAKE_PROJECT_NAME} PRIVATE -Wl,-ld_classic)

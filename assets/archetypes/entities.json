@@ -1,0 +1,73 @@
+{
+    "Player": {
+        "Health": {
+            "max": 200
+        },
+        "Physics": {
+            "velocity": [0, 0],
+            "acceleration": [0, 0]
+        },
+        "Transform": {
+            "position": [644, 644],
+            "rotation": 0,
+            "scale": [1, 1]
+        },
+        "Collider": {
+            "rect": [644, 644, 8, 18],
+            "offset": [12, 10]
+        },
+        "Sprite": {
+            "source": [0, 32, 32, 32],
+            "destination": [128, 128, 32, 32],
+            "texture": "Player"
+        },
+        "Audio":{
+            "sample": "LIGHTNING"
+        }
+    },
+    "Pup": {
+        "Transform": {
+            "position": [670, 670],
+            "rotation": 0,
+            "scale": [1, 1]
+        },
+        "Health": {
+            "max": 50
+        },
+        "Collider": {
+            "rect": [670, 670, 8, 14],
+            "offset": [4, 2]
+        },
+        "Sprite": {
+            "source": [0, 16, 16, 16],
+            "destination": [670, 670, 16, 16],
+            "texture": "Pup"
+        },
+        "Physics": {
+            "velocity": [0, 0],
+            "acceleration": [0, 0]
+        },
+        "AI": {
+            "script": "src/scripts/pup.lua"
+        }
+    },
+    "Rain": {
+        "Physics": {
+            "velocity": [0, 0],
+            "acceleration": [0, 0]
+        },
+        "Transform": {
+            "position": [700, 600],
+            "rotation": 0,
+            "scale": [1, 1]
+        },
+        "AI": {
+            "script": "src/scripts/rain.lua"
+        },
+        "Sprite": {
+            "source": [0, 0, 8, 8],
+            "destination": [700, 600, 16, 16],
+            "texture": "Rain"
+        }
+    }
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="28">
+ <tileset firstgid="1" source="tile_atlas.tsx"/>
+ <layer id="1" name="input_ground" width="10" height="10">
+  <data encoding="csv">
+641,0,642,0,643,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+673,0,0,0,675,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+705,0,706,0,707,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+737,0,738,0,739,0,740,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+769,0,770,0,771,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="4" name="input_home" width="10" height="10" visible="0">
+  <data encoding="csv">
+29,0,30,0,31,0,32,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+61,0,62,0,63,0,64,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+93,0,94,0,95,0,96,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+125,0,126,0,127,0,128,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="3" name="output_collision"/>
+  <object id="16" x="0" y="0" width="32" height="32"/>
+  <object id="17" x="64" y="0" width="32" height="32"/>
+  <object id="18" x="128" y="0" width="32" height="32"/>
+  <object id="19" x="192" y="0" width="32" height="32"/>
+  <object id="20" x="0" y="64" width="32" height="14"/>
+  <object id="21" x="64" y="64" width="32" height="14"/>
+  <object id="22" x="128" y="64" width="32" height="14"/>
+  <object id="23" x="192" y="64" width="32" height="14"/>
+  <object id="24" x="208" y="128" width="16" height="32"/>
+  <object id="25" x="208" y="192" width="16" height="32"/>
+  <object id="26" x="0" y="192" width="16" height="32"/>
+  <object id="27" x="0" y="128" width="16" height="32"/>
+ </objectgroup>
+</map>
