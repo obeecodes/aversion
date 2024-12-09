@@ -9,5 +9,7 @@ struct InputComponent{
     bool moveLeft;
     bool moveRight;
     bool createEntity;
+    bool attack;
+    bool charge;
     InputComponent(bool moveUp = false, bool moveDown = false, bool moveLeft = false, bool moveRight = false, bool createEntity = false);
 };

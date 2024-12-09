@@ -126,7 +126,8 @@ void InputSystem::update(){
     this->sprites[i].src_rect.y = (this->inputs[0].moveDown) ? this->sprites[i].src_rect.h : this->sprites[i].src_rect.y;
     */
     
-    eventManager->publish(Event{EventType::INPUT, this->inputComponentSystem->getEntityID(i), 0, this->inputs[i]});
+    #eventManager->publish(Event{EventType::INPUT, this->inputComponentSystem->getEntityID(i), 0, this->inputs[i]});
+    eventManager->publish(Event{EventType::INPUT, this->inputComponentSystem->getEntityID(i), this->inputs[i]});
    
   }
 
@@ -305,6 +306,8 @@ void InputSystem::handlePlayKeyPress(SDL_KeyboardEvent& event){
           break;
           case SDL_SCANCODE_B:
             AudioSystem::Instance()->playSample(0);
+          case SDL_SCANCODE_SPACE:
+            inputs[i].charge = true;
           default:
             break;
         }
@@ -465,6 +468,8 @@ void InputSystem::handlePlayKeyRelease(SDL_KeyboardEvent& event){
           case SDL_SCANCODE_H:
             inputs[i].createEntity = false;
             break;
+          case SDL_SCANCODE_SPACE:
+            inputs[i].charge = false;
           default:
             break;
         }
